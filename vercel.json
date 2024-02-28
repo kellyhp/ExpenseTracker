@@ -1,17 +1,14 @@
 {
     "version": 2,
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "index.js"
-      }
-    ],
     "functions": {
-      "api": {
-        "runtime": "vercel-node@0.3.2",
-        "memory": 128
+      "api/index": {
+        "handler": "index.handler",
+        "runtime": "vercel-node@0.3.2"
       }
     },
+    "routes": [
+      { "src": "/(.*)", "dest": "api/index.js" }
+    ],
     "env": {
       "CONNECTION_STRING": "<your-mongodb-connection-string>"
     }

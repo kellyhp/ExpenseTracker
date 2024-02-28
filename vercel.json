@@ -1,16 +1,15 @@
 {
     "version": 2,
-    "functions": {
-      "api/index": {
-        "handler": "index.handler",
-        "runtime": "vercel-node@0.3.2"
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@now/node"
       }
-    },
-    "routes": [
-      { "src": "/(.*)", "dest": "api/index.js" }
     ],
-    "env": {
-      "CONNECTION_STRING": "<your-mongodb-connection-string>"
-    }
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "index.js"
+      }
+    ]
   }
-  
